@@ -34,17 +34,11 @@ public class ITBraveTracingFeature_Client extends ITHttpClient<Client> {
   }
 
   @Override protected void get(Client client, String pathIncludingQuery) throws IOException {
-    client.target(server.url("/foo").uri()).request().buildGet().invoke().close();
+    client.target(server.url(pathIncludingQuery).uri()).request().buildGet().invoke().close();
   }
 
   @Override protected void getAsync(Client client, String pathIncludingQuery) throws Exception {
-    client.target(server.url("/foo").uri()).request().async().get();
-  }
-
-  @Override
-  @Test(expected = AssertionError.class) // query params are not logged in jersey
-  public void httpUrlTagIncludesQueryParams() throws Exception {
-    super.httpUrlTagIncludesQueryParams();
+    client.target(server.url(pathIncludingQuery).uri()).request().async().get();
   }
 
   @Override
@@ -60,7 +54,7 @@ public class ITBraveTracingFeature_Client extends ITHttpClient<Client> {
   }
 
   @Override
-  @Test(expected = AssertionError.class) // #289 attach local span to jersey threadpool
+  @Test(expected = AssertionError.class) // TODO: implement ExecutorServiceProvider with current context
   public void usesParentFromInvocationTime_local() throws Exception {
     super.usesParentFromInvocationTime_local();
   }

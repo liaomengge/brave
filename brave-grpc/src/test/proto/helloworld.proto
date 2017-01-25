@@ -12,6 +12,12 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
+// intentionally different to test service not found
+service Grater {
+  // Sends a greeting
+  rpc SeyHallo (HelloRequest) returns (HelloReply) {}
+}
+
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;

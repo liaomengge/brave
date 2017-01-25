@@ -22,6 +22,12 @@
         <groupId>${project.groupId}</groupId>
         <artifactId>brave-web-servlet-filter</artifactId>
      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>brave</artifactId>
+        <version>${project.version}</version>
+        <optional>true</optional>
+      </dependency>
      <!-- implicitly servlet 3.0.1 -->
      <dependency>
         <groupId>org.springframework</groupId>

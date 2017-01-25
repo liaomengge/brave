@@ -79,7 +79,7 @@ public class TestDatabaseRule extends ExternalResource {
         liquibase.afterPropertiesSet();
     }
 
-    interface SQLExceptionalConsumer<T extends Statement> {
+    public interface SQLExceptionalConsumer<T extends Statement> {
         void accept(T t) throws SQLException;
     }
 

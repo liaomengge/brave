@@ -34,11 +34,11 @@ public class ITBraveHttpRequestInterceptor extends ITHttpClient<CloseableHttpCli
 
   @Override protected void get(CloseableHttpClient client, String pathIncludingQuery)
       throws IOException {
-    client.execute(new HttpGet(server.url("/foo").uri())).close();
+    client.execute(new HttpGet(server.url(pathIncludingQuery).uri())).close();
   }
 
   @Override protected void getAsync(CloseableHttpClient client, String pathIncludingQuery) {
-    throw new AssumptionViolatedException("TODO: HttpAsyncClients");
+    throw new AssumptionViolatedException("This is not an async library");
   }
 
   @Override

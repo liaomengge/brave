@@ -22,10 +22,18 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>brave-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>brave</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.40</version>
+            <version>5.1.41</version>
         </dependency>
         <!-- TODO: use something different for property-based testing -->
         <dependency>
